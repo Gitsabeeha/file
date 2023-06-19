@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table Generator</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #container{
+            position: relative;   
+            margin: auto;
+            width: 50vw;
+            height: 100vh;
+        }
+        .calbox{
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    
+<div id="container" >
+     <img src="image.png" >
+     
+   
+    <div class="calbox">
+        <h1>Multiplication Table Generator</h1>
+        <label for="myinput"> Enter a number to Generate Table</label>
+        <input type="number" id="myinput"> 
+        <button id="btn">Generate</button>
+        
+        <button id="btn2">Remove</button>
+        <div id="output"> </div>
+    </div>
+    
+</div>
+
+
+    <script>
+    function Multi(num){
+        let table=' '
+                for (let i=1; i<=10; i++) {
+               
+                 table += (`${num} X ${i} =${num*i}<br>`)  }     
+                 document.getElementById('output').innerHTML  =table  
+                        }
+
+
+    const btn= document.getElementById('btn');
+     btn.addEventListener('click',function(event){
+       
+           let userinput=document.getElementById('myinput').value;
+
+           Multi( userinput);
+     });
+
+
+     const removeButton=document.getElementById('btn2');
+     removeButton.addEventListener('click',function(){
+        document.getElementById('output').innerHTML=' '
+        document.getElementById('myinput').value=' '
+     })
+
+
+    </script>
+</body>
+</html>
